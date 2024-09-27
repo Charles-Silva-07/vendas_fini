@@ -12,6 +12,7 @@ testes.py
 testes.cpython-311.pyc
 login.cpython-311.pyc
 app.py
+.streamlit
 
 # Editors
 .vscode/

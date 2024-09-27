@@ -8,7 +8,8 @@ from PIL import Image
 import altair as alt
 import numpy as np 
 import time
-import chaves
+import random
+import hmac
 
 # Configure a localidade
 locale.setlocale(locale.LC_ALL, 'pt_BR')
@@ -24,9 +25,9 @@ st.set_page_config(
 # conexão com o banco de dados
 @st.cache_data
 def banco(database_name, ano, secao):
-    server = chaves.server   
-    username = chaves.username
-    password = chaves.password
+    server = st.secrets["db_server"]  
+    username = st.secrets["db_username"]
+    password = st.secrets["db_password"]
 
     # String de conexão    
     conn_str = f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database_name};UID={username};PWD={password}'
