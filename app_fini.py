@@ -32,9 +32,9 @@ def banco(database_name, ano, secao):
     username = st.secrets["db_username"]
     password = st.secrets["db_password"]
 
-    # String de conexão    
-    conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database_name};UID={username};PWD={password}'
-    
+    # String de conexão        
+    conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server},1433;DATABASE={database_name};UID={username};PWD={password};Timeout=30'
+
     # Definir LD_LIBRARY_PATH para ambiente Linux
     os.environ['LD_LIBRARY_PATH'] = '/opt/microsoft/msodbcsql17/lib64:/usr/lib/x86_64-linux-gnu'   
 
