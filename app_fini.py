@@ -13,6 +13,7 @@ import hmac
 import os
 
 
+
 # Configure a localidade
 locale.setlocale(locale.LC_ALL, 'pt_BR')
 
@@ -32,11 +33,14 @@ def banco(database_name, ano, secao):
     password = st.secrets["db_password"]
 
     # String de conexão    
-    conn_str = f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database_name};UID={username};PWD={password}'
-    os.environ['LD_LIBRARY_PATH'] = '/opt/microsoft/msodbcsql17/lib64'
+    conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database_name};UID={username};PWD={password}'
+    
+    # Definir LD_LIBRARY_PATH para ambiente Linux
+    os.environ['LD_LIBRARY_PATH'] = '/opt/microsoft/msodbcsql17/lib64:/usr/lib/x86_64-linux-gnu'   
+
     # Estabelece a conexão
     connection = pyodbc.connect(conn_str)
-
+    
     query = f"""
     SELECT Ano, Mês, Seção,
         COALESCE(SUM(Faturamento), 0) AS 'Faturamento',  
