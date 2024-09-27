@@ -1,0 +1,48 @@
+/* some com o btão de deploy */
+.stDeployButton{
+    display: none;
+}
+
+
+.stButton > button {
+    background-color: #0d6efd;
+    color: #fff;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* centralizando a logo */
+.st-emotion-cache-1kyxreq {
+    display: flex;
+    flex-flow: wrap;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+/* Largura do container login */
+.st-emotion-cache-1jicfl2 {
+    width: 100%;
+    padding: 6rem 1rem 10rem;
+    min-width: auto;
+    max-width: initial;
+}
+
+/* Para telas grandes */
+@media (min-width: 1024px) {
+    .st-emotion-cache-1jicfl2 {
+        max-width: 60%; /* Ocupará 60% da largura da tela */
+        margin: 0 auto; /* Centralizar o container */
+    }
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1440px) {
+    .st-emotion-cache-1jicfl2 {
+        max-width: 50%; /* Ocupará 50% da largura da tela */
+    }
+}
+
