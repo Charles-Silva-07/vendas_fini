@@ -1,2 +1,2 @@
 locales-all
-pyodbc==5.1.0
+pyodbc
