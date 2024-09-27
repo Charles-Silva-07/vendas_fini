@@ -10,6 +10,8 @@ import numpy as np
 import time
 import random
 import hmac
+import os
+
 
 # Configure a localidade
 locale.setlocale(locale.LC_ALL, 'pt_BR')
@@ -31,7 +33,7 @@ def banco(database_name, ano, secao):
 
     # String de conexão    
     conn_str = f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database_name};UID={username};PWD={password}'
-
+    os.environ['LD_LIBRARY_PATH'] = '/opt/microsoft/msodbcsql17/lib64'
     # Estabelece a conexão
     connection = pyodbc.connect(conn_str)
 
